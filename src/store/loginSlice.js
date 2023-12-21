@@ -10,9 +10,11 @@ const loginSlice = createSlice({
         loginUser: (state, action) => {
             state.username = action.payload;
             state.isLogin = true;
+            state.token = null;
           },
           logoutUser: (state) => {
             state.username = null;
+            state.token = null
             state.isLogin = false;
           },
       
@@ -22,4 +24,4 @@ const loginSlice = createSlice({
 export const { loginUser, logoutUser } = loginSlice.actions;
 export const selectUsername = (state) => state.login.username;
 export const selectIslogin = (state) => state.login.isLogin;
-export default loginSlice.reducer;-
+export default loginSlice.reducer;

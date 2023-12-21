@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect,useRef } from "react";
 import {Link, useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {useForm} from 'react-hook-form';
 import {ToastContainer, toast} from "react-toastify";
 import eyeIcon from '../../assets/images/eyeIcon.svg';
-import login from '../../api/index'
+import login from '../../api/index';
+import {selectUsername} from '../../redux/loginSlice'
+import {loginUser} from '../../redux/loginSlice'
 import eyeIconVisib from '../../assets/images/eyeIconVisib.svg';
 import shoppingcart from '../../assets/images/shoppingcart.png';
 
 function Login (props) {
     const navigate = useNavigate(); 
-    const userRef = userRef();
+    const userRef = useRef();
     cconst [errMsg, setErrMsg] = useState('');
+    const login = useSelector(selectUsername);
     const dispatch = dispatch();
     const [username, setUsername] = useState('');
-    const [password, setPwd] = useState('');
-    const [error, setError] = useState(false)
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [password, setPasswordd] = useState('');
+    const [auth, setAuth] = useState({});
+    const [requestError, setRequestError] = useState(false);
+    
 }
 
 const [passwordVisible, setPasswordVisible] = useState(false);
@@ -40,7 +47,12 @@ const handleSubmit = async (e) =>{
         const response = await login(data)
        
        .current.focus();
-    }
+    } catch(err){
+        setRequestError(true)
+        setErrMsg(true)
+        console.log(err)          
+        toast.error(err.message)
+}
 }
 
 const togglePasswordVisibility = () => {
@@ -49,9 +61,9 @@ const togglePasswordVisibility = () => {
 
 return(
     <div className={styles.container}>
-            <div className={styles.container__logo}>
+            <div className={styles.container__img}>
                 <div>
-                    <img src={logo} alt="logo"/>
+                    <img src={shoppingcart} alt="shoppingcart"/>
                     <h2>MOBI MARKET</h2>
                 </div>
             </div>
@@ -80,7 +92,7 @@ return(
                             className={inputClasses}
                         />
                         <img
-                            src={showPassword ? eyeIcon : eyeIconNoVisible}
+                            src={passwordVisible ? eyeIcon : eyeIconVisib}
                             alt="eyeIcon"
                             onClick={togglePasswordVisibility}
                             className={styles.inputPasswordImg}
