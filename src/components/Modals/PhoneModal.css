@@ -1,0 +1,86 @@
+.phoneInput {
+    display: flex;
+    border-bottom: #F7F6F9 solid 2px;
+    width: 100%;
+    justify-content: space-between;
+    color: #C0C0C0;
+    margin-top: 8px;
+  
+  }
+  .addNumButton {
+    border: none;
+    outline: none;
+    background: none;
+    color: #535bf2;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 32px;
+  }
+  .profile__number {
+    width: 80%;
+  }
+  .modalBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    img{
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .modalPhoneNumInput {
+    border: none;
+    outline: none;
+    font-size: 22px;
+    width: 150px;
+  }
+  
+  .modalPinCode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4{
+      margin-bottom: 10px;
+    }
+  }
+  
+  .addNumBtnModal {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 335px;
+    height: 65px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #5458EA;
+    color: #FFFFFF;
+    &:disabled {
+      background-color: #C0C0C0;
+      cursor: not-allowed;
+    }
+  }
+  .modalPinCodeTimer {
+    p {
+      margin-top: 14px;
+      font-size: 18px;
+    }
+  }
+  .btn_timer {
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 700;
+    color: #535bf2;
+    background: none;
+    cursor: pointer;
+    margin-top: 14px;
+  }
