@@ -1,4 +1,4 @@
-const URL = 'http://68.183.72.178';
+const URL = 'https://neomobimarket-production.up.railway.app';
 
 const instance = axios.create({
     baseURL: URL,
@@ -8,13 +8,13 @@ const instance = axios.create({
 });
 
 export const login = async (data) =>{
-    const res = await instance.post('api/v1/dj-rest-auth/login/', data)
+    const res = await instance.post('/api/auth', data)
     return res.data
 }
 
 export const register = async (data) =>{
     console.log(data)
-    const res = await instance.post('/api/v1/dj-rest-auth/registration/', data)
+    const res = await instance.post('/api/register', data)
     return res.data
 
 }

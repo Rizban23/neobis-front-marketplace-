@@ -1,0 +1,147 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0 52px;
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+ .header__logo img {
+      width: 44px;
+      height: 44px;
+      margin-right: 8px;
+    }
+  
+.header__logo   h3 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+  
+  
+  .header__user {
+    display: flex;
+    align-items: center;
+  }
+ .header__user button {
+      border: none;
+      outline: none;
+      background-color: #5458EA;
+      width: 215px;
+      height: 44px;
+      color: #FFFFFF;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-right: 16px;
+      cursor: pointer;
+    }
+ .header__user h4 {
+      font-size: 18px;
+    }
+.header__user  p{
+      font-size: 18px;
+      margin-right: 12px;
+    }
+.header__user img {
+      width: 60px;
+      height: 60px;
+    }
+  
+  
+  .modalPlaceAd {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .closeIcon {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+  
+  .container__btnSubmit {
+    width: 335px;
+    height: 44px;
+    border-radius: 80px;
+    padding: 10px;
+    background-color: #5458EA;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 30px 0 16px;
+    align-items: center;
+  }
+ .container__btnSubmit:disabled {
+      background-color: #C0C0C0;
+      cursor: not-allowed;
+    }
+  
+  
+  .container__content_inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .container__input {
+    border: none;
+    outline: none;
+    width: 532px;
+    height: auto;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 12px 16px;
+    color: #494949;
+    background-color: #F7F6F9;
+    border-radius: 12px;
+    font-size: 16px;
+    overflow-y: hidden;
+    font-family: inherit;
+    resize: none;
+  }
+  
+  .image_upload {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;;
+  }
+  
+  .image_preview {
+    img {
+      width: 76px;
+      height: 96px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+  }
+  .uploadButton {
+    display: flex;
+    flex-direction: column;
+    width: 76px;
+    height: 96px;
+    background-color: #F7F6F9;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #5458EA;
+    text-align: center;
+    cursor: pointer;
+  }
+    .uploadButton img{
+      width: 22px;
+      height: 22px;
+      margin-bottom: 8px;
+    }
+  

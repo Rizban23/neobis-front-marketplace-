@@ -1,30 +1,23 @@
-import React, {useEffect} from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
-import { useAuth } from './hooks/use-Auth';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Profile from './pages/Profile';
-import MyStore from './pages/MyStore'
-import MainScreen from './pages/MainScreen';
-import FavoriteItems from './pages/FavoriteItems';
-import Username from './components/UsernameInput';
-import Password from './Password'
-import './App.css';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Login from "../src/pages/Login/Login.jsx";
+import Registr from "../src/pages/Registr/Registr.jsx";
+import Hero from "../src/pages/Hero/Hero.jsx";
+import Password from "../src/pages/Password/Password.jsx";
+import Profile from "./pages/Profile/ProfilePage.jsx";
+import ProfilePage from './pages/Profile/ProfilePage.jsx';
 
-function App() {
-  return (
-    <>
-    <Routes>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/' element={<MainScreen/>} />
-        <Route path='/profile' element={<Profile/>}/>
-        <Route path='/mystore' element={<MyStore/>}/>
-        <Route path='/favorite' element={<FavoriteItems/>}/>
-        <Route path='/password' element={<Password/>}/>
-    </Routes>
-    </>
-  );
+function App(props) {
+    return (
+        <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Registr/>} />
+            <Route path="/password" element={<Password/>} />
+            <Route path="/profile" element={<ProfilePage/>} />
+            <Route path="/hero" element={< Hero/>} />
+        </Routes>
+    );
 }
 
 export default App;

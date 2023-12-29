@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import marketLogo from '../../assets/img/shopping-cartHeaderLogo.svg';
-import userLogo from '../../assets/img/Profile/ProfileIcon.svg';
-import btnUploadImg from '../../assets/img/image-addIcon.svg';
-import styles from './header.module.scss';
+import Logo from '../../assets/images/logo.png';
+import userIcon from '../../assets/images/user.png';
+import addImg from '../../assets/images/addPhoto.png';
+import styles from '../Header/header.module.css';
 import Box from '@mui/material/Box';
-import closeIcon from '../../assets/img/Profile/closeIcon.svg';
+import closeIcon from '../../assets/images/remove.png';
 import Modal from '@mui/material/Modal';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
@@ -67,7 +67,7 @@ function Header(props) {
     return (
         <div className={styles.header}>
             <Link to='/main' className={styles.header__logo}>
-                <img src={marketLogo} alt="marketLogo"/>
+                <img src={Logo} alt="marketLogo"/>
                 <h3>MOBI MARKET</h3>
             </Link>
 
@@ -80,7 +80,7 @@ function Header(props) {
                     <p>sergeykrash01</p>
                 </div>
                 <Link to={'/profile'}>
-                    <img src={userLogo} alt="userLogo"/>
+                    <img src={userIcon} alt="userIcon"/>
                 </Link>
             </div>
 
@@ -101,7 +101,7 @@ function Header(props) {
                                 />
                                 {images.length < 4 && (
                                     <label htmlFor="image-upload" className={styles.uploadButton}>
-                                        <img src={btnUploadImg} alt="btnUploadImg" />
+                                        <img src={addImg} alt="btnUploadImg" />
                                         Добавить <br /> фото
                                     </label>
                                 )}
@@ -114,13 +114,13 @@ function Header(props) {
 
                             </label>
                         </div>
-                        <form className={styles.block__content_inputs} onSubmit={handleSubmit(onSubmit)}>
+                        <form className={styles.container__content_inputs} onSubmit={handleSubmit(onSubmit)}>
               <textarea
                   {...register('price', {
                       required: 'Обязательное поле!',
                   })}
                   placeholder="Цена"
-                  className={styles.block__input}
+                  className={styles.container__input}
               />
                             {errors?.price && <div style={{color: 'red'}}>{errors.price.message}</div>}
 
@@ -130,7 +130,7 @@ function Header(props) {
                                 })}
                                 type="text"
                                 placeholder="Название"
-                                className={styles.block__input}
+                                className={styles.container__input}
                             />
                             {errors?.title && <div style={{color: 'red'}}>{errors.title.message}</div>}
 
@@ -140,7 +140,7 @@ function Header(props) {
                                 })}
                                 type="text"
                                 placeholder="Краткое описание"
-                                className={styles.block__input}
+                                className={styles.container__input}
                             />
                             {errors?.price && <div style={{color: 'red'}}>{errors.price.message}</div>}
 
@@ -150,7 +150,7 @@ function Header(props) {
                                 })}
                                 type="text"
                                 placeholder="Полное описание"
-                                className={styles.block__input}
+                                className={styles.container__input}
                             />
                             {errors?.long_description &&
                                 <div style={{color: 'red'}}>{errors.long_description.message}</div>}

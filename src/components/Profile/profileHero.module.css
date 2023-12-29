@@ -1,0 +1,72 @@
+/* .mainPhoto {
+    width: 100px;
+  }
+  .profile__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile_avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #535bf2;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    input {
+      display: none;
+    }
+    .uploadButton {
+      cursor: pointer;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+  }
+  
+  .profile__user_data {
+    width: 80%;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  
+    input {
+      width: 80%;
+      height: 32px;
+      border: none;
+      outline: none;
+      border-bottom: #F7F6F9 solid 2px;
+      margin: 8px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  
+  .profile__user_phone {
+    margin-top: 15px;
+  }
+  .profile__btnSave {
+    width: 240px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #535bf2;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+   */

@@ -1,64 +1,54 @@
-import { useState, useEffect,useRef } from "react";
-import {Link, useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useState } from "react";
+import {Link} from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
 import {useForm} from 'react-hook-form';
 import {ToastContainer, toast} from "react-toastify";
 import eyeIcon from '../../assets/images/eyeIcon.svg';
-import login from '../../api/index';
-import {selectUsername} from '../../redux/loginSlice'
-import {loginUser} from '../../redux/loginSlice'
 import eyeIconVisib from '../../assets/images/eyeIconVisib.svg';
 import shoppingcart from '../../assets/images/shoppingcart.png';
+import styles from '../Login/login.module.css';
+import classNames from 'classnames';
 
-function Login (props) {
-    const navigate = useNavigate(); 
-    const userRef = useRef();
-    cconst [errMsg, setErrMsg] = useState('');
-    const login = useSelector(selectUsername);
-    const dispatch = dispatch();
+function Login(props) {
+
     const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('')
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [password, setPasswordd] = useState('');
-    const [auth, setAuth] = useState({});
-    const [requestError, setRequestError] = useState(false);
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
+    const inputType = passwordVisible ? 'text' : 'password';
+
+    //уведомление об ошибке
+    const notification = () => {
+        return toast.error("Не верный логин или пароль!")
+    }
+
+    const signInData = {
+        username: username,
+        password: password,
+    };
+
+    const handleChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const {register, handleSubmit, formState: { errors, isValid } } = useForm()
+    const onSubmit = (data) => {
+        alert(`Твое имя ${data.name} пароль ${data.password}`)
+    }
+    console.log(errors)
+
+
+    const isDisabled = !(isValid)
+    const buttonClasses = classNames(styles.container__btnSubmit, {
+        isDisabled,
+    });
+    const inputClasses = classNames(styles.container__input,styles.password);
+    const contentLoginClasses = classNames(styles.container__content, styles.container__content_login);
+
+
     
-}
-
-const [passwordVisible, setPasswordVisible] = useState(false);
-console.log(login)
-useEffect(() =>{
-   userRef.current.focus();
-}, []);
-
-useEffect(() =>{
-    setError(false);
-}, [username, password]);    
-
-const handleSubmit = async (e) =>{
-    e.preventDefault();
-    console.log(username, password);
-    try{
-        const data ={
-            email:username,
-            password:password
-        }
-      dispatch (loginUser(user));
-      navigate ('/home');
-        const response = await login(data)
-       
-       .current.focus();
-    } catch(err){
-        setRequestError(true)
-        setErrMsg(true)
-        console.log(err)          
-        toast.error(err.message)
-}
-}
-
-const togglePasswordVisibility = () => {
-  setPasswordVisible(!passwordVisible);
-};
-
 return(
     <div className={styles.container}>
             <div className={styles.container__img}>
@@ -67,7 +57,7 @@ return(
                     <h2>MOBI MARKET</h2>
                 </div>
             </div>
-            <div className={blockLoginClasses}>
+            <div className={contentLoginClasses}>
                 <form className={styles.container__content_items} onSubmit={handleSubmit(onSubmit)}>
                     <input
                         {...register('name', {
@@ -123,5 +113,6 @@ return(
             />
         </div>
     );
+            };
 
-export default LoginPage;
+export default Login;

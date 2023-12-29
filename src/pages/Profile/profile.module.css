@@ -1,0 +1,122 @@
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 18px 42px;
+    cursor: pointer;
+}
+.user.active {
+      background: linear-gradient(#6d8fff, #dbe7fd);
+    }
+.user:hover {
+      background-color: #e9eaec;
+    }
+  
+  .userInfo {
+    margin-left: 12px;
+    color: #494949;
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  
+  .profileMenu {
+    width: 540px;
+  }
+  
+  
+  
+  .menuItems {
+    margin: 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+    .menuItems .menuItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px 18px;
+      height: 58px;
+      width: 476px;
+      border-radius: 5px;
+    }
+    .menuItems.active {
+        background-color: #e9eaec;
+      }
+    .menuItems:hover {
+        background-color: #e9eaec;
+      }
+      .menuItems .imgIcon{
+        margin-right: 12px;
+        width: 30px;
+        height: 30px;
+      }
+      .menuItems  img {
+        width: 24px;
+        height: 24px;
+      }
+      .menuItemTitle {
+        display: flex;
+        align-items: center;
+      }
+    
+  
+  .menuItemMargin {
+    margin: 10px 0 45px;
+  }
+  .profileContent {
+    flex: 1;
+    background-color: #F0F0F0;
+    height: 100vh;
+  }
+  
+  /* .modalLogOut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    outline: none;
+    text-align: center;
+    h3 {
+      font-size: 18px;
+    }
+    img{
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .btn_LogOut {
+    width: 280px;
+    height: 44px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background-color: #5D5FEF;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn_cancel {
+    outline: none;
+    border: none;
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  } */

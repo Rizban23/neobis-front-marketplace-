@@ -1,64 +1,32 @@
-
-import React, {useEffect, useState, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useFormik } from 'formik';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './Registration.css';
-import { Schema } from 'yup';
-import { setUsername, setEmail } from '../../store/inputSlice';
-import shoppingcart from '../../assets/images/shoppingcart.svg';
+import * as React from 'react';
+// import {useState} from 'react';
+// import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {useForm} from "react-hook-form";
+import styles from '../Login/login.module.css';
+// import { setUser } from '../redux/slices/userSlice';
+// import { useDispatch } from 'react-redux';
+// import { useFormik } from 'formik';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import shoppingcart from '../../assets/images/shoppingcart.png';
 import arrowLeft from '../../assets/images/arrow-left.svg';
+import classNames from 'classnames'
 
 function Register() {
-    const [requestError, setRequestError] = useState(false);
-    let navigate = useNavigate();
-    const [errMsg, setErrMsg] = useState('');
+    
+    const {register, handleSubmit, formState: { errors, isValid } } = useForm()
+    const onSubmit = (data) => {
+        alert(`Твое имя ${data.name} email ${data.email}`)
+    }
+    console.log(errors)
 
-    const onSubmit = async () => {
-        addUserData(values.username, values.email)
-        const userInfo = {'username': values.username, 'email': values.email};
-        navigate('/password')
-        }
-        try{
-            // const response = await register(data)
-            // console.log(response)
-            
-        }
-        catch(err){
-            setRequestError(true)
-            if(+err.response?.data.status === 400){
-                toast.error(err.response.data.message)
-            } else if(err?.response){
-                toast.error('Произошла ошибка')
-            } else if(err?.message){
-                toast.error('Сервер не отвечает')
-            }
-        }
-    };
 
-    const {
-        values,
-        errors,
-        touched,
-        isSubmitting,
-        handleBlur,
-        handleChange,
-        handleSubmit,
-        onSubmit,
-    } = useFormik({
-        initialValues: {
-        email: "",
-        username: "",
-        },
-        validationSchema: Schema,
-        onSubmit,
+    const isDisabled = !(isValid)
+    const buttonClasses = classNames(styles.block__btnSubmit, {
+        isDisabled,
     });
-
-    function addUserData(username, email){
-        dispatch(setUsername({username, email}));
-        // dispatch(setEmail({email}))
-      }
+// }
     return(
         <div className={styles.container}>
         <div className={styles.container__img}>
@@ -93,7 +61,7 @@ function Register() {
                     })}
                     type='email'
                     placeholder="Почта"
-                    className={styles.block__input}
+                    className={styles.container__input}
                 />
 
                 {errors?.email && <div style={{color: 'red'}}>{errors.email.message}</div>}
@@ -119,6 +87,8 @@ function Register() {
         />
     </div>
 );
+    }
+    
 
 
 export default Register;
